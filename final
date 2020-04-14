@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Aprill7LabWork
+{
+class Program
+{
+static void Main(string[] args)
+{
+PlayWithText p = new PlayWithText();
+p.ProcessTextString(Console.ReadLine());
+}
+}
+
+class PlayWithText
+{
+public void ProcessTextString(String a)
+{
+
+
+int startpos = 1, endpos = 1;
+
+for (int i = 0; i < a.Length ; i++)
+{
+
+if (a[i].Equals(' ')|| i==0 )
+{
+
+startpos = i;
+for (int j = i + 1; j < a.Length; j++)
+{
+if (a[j].Equals(' ') )
+{
+
+endpos = j;
+Console.WriteLine("the word is {0}", a.Substring(i, j-i));
+break;
+}
+}
+Console.WriteLine(a.Substring(startpos, endpos - startpos));
+}
+}
+
+}
+
+}
